@@ -18,6 +18,7 @@ function crearTrabajador(trabajadores){
 
 };
 
+//por codigo y encontrar el tranajador 
 function modificarTrabajdor(trabajdores){
 
     let codigo= promt('Introduce el codigo del trabajador');
