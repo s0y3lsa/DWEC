@@ -1,114 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bingo de JavaScript</title>
     <link rel="stylesheet" href="estilos.css">
+    <script src="juego.js" defer></script>
 </head>
+
 <body>
-    
-    <form>
-    <h1>Bingo en JavaScript</h1>
+    <h1>Bingo de JavaScript</h1>
+    Segundos: <input type="number" id="segundos" name="segundos" placeholder="entre 1 y 10" value="3">
+    <button id="comenzar" name="comenzar" >Comenzar partida</button>
+    <h2>Resumen Jugadores</h2>
+    <div id="resumen"></div>
+    <h2>Bolas Sacadas</h2>
 
-        <label for="">Segundos</label>
-        <input type="number" id="" name="">
-        <input type="submit" values="Comenzar partida">
-
-        <h1>Resumen Jugadores</h1>
-
-        <h1>Bolas Sacadas</h1>
-
-        <h1>Cartones de los Jugadores</h1>
-        
-    <form id="cartones">
-
-        <div id="jugador1" >
-
-            <div>
-                <div> <!--for * 9--> </div>
-                <div>1</div>
-                <div>2</div>
-                <div>2</div>
-                <div>3</div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-
-            <div id="segundaFila">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-
-            <div id="terceraFila">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-        <br>
-
-        
-        <div id="jugador2">
-
-            <div>
-                <div> 1<!--for * 9--> </div>
-                <div>2</div>
-                <div>3</div>
-                <div>3</div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-
-            <div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-
-            <div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-
-
-        <h1>Carton Jugador Humano:</h1>
-    </form>
-
-
-
+    <h2>Cartones de los Jugadores</h2>
+    <div class="cartones">
+        <div id="jugador1"></div>
+        <div id="jugador2"></div>
+    </div>
+    <h2>Carton jugador humano</h2>
+    <div id="jugador3"></div>
+    <div class="acciones-jugador">
+        <button id="cantarLinea">Cantar Línea</button>
+        <button id="cantarBingo">Cantar Bingo</button>
+    </div>
 
 </body>
+
 </html>
