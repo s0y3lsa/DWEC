@@ -2,7 +2,7 @@
 
 'use strict';
 
-//
+//array json
 let alumnos=[
 {
     nombre: 'Juan',

@@ -2,12 +2,14 @@
 
 function crearTrabajador(trabajadores){
 //con padStart añadimos caracteres al inicio de una cadena
-    let codigo = `E0.${incremento++}`;
+    let codigo = `E0${incremento++}`;
     let nombre=promt('Introduce el nombre');
     let categoria=promt('Introduce la categotia');
     let anio=promt('Introduce el año de entrada');
 
+    
     let trabajador={};
+
     trabajador.codigo=codigo;
     trabajador.nombre=nombre;
     trabajador.categoria=categoria;
@@ -19,18 +21,18 @@ function crearTrabajador(trabajadores){
 };
 
 //por codigo y encontrar el tranajador 
-function modificarTrabajdor(trabajdores){
+function modificarTrabajdor(trabajadores){
 
     let codigo= promt('Introduce el codigo del trabajador');
     let trabajdorEncontrado;
 
     for(let i=0;i<trabajadores.length;i++){
 
-        if(trabajdores.codigo===codigo){
+        if(trabajadores.codigo===codigo){
         // trabajdorEncontrado=i;
         trabajdorEncontrado=trabajadores[i];
         break;
-
+            
     }
     if(trabajdorEncontrado===undefined){
         return;
@@ -39,6 +41,34 @@ function modificarTrabajdor(trabajdores){
     trabajdorEncontrado.categoria=parseInt(promt('Introduce la categoría:', trabajadorEncontrado.categoria));
     trabajdorEncontrado.anio=parseInt(('Introduce el año de contradiccion', trabajadorEncontrado.anio));
     
+}
+
+//borrar trabajador por codigo 
+
+function borrarTrabajador(trabajadores){
+
+    
+
+    let codigo= promt('Introduce el codigo del trabajador');
+    let trabajadorEncontrado;
+
+    for(let i=0; i<trabajdores.length;i++){
+
+        if(trabajadores.codigo===codigo){
+            trabajadorEncontrado=trabajadores[i];
+            break;
+        }
+
+    }
+
+    if(rabajadorEncontrado){
+        let confirmacion=confirm('Estas seguro de que deseas eliminar al trabajador?');
+        if(confirmacion){
+            trabajadores.splice(trabajadores.indexof(trabajador))
+        }
+    }
+
+
 }
 
 function calcularNominas (trabajdores){

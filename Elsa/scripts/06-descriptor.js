@@ -1,5 +1,9 @@
 'use strict';
 
+
+
+
+
     function cuadradoHueco(tamano){
         let resultado="";
 
@@ -14,6 +18,10 @@
         }
         return resultado;
     }
+
+
+
+
     //funcion para triangulo 
     function triangulo(tamano){
         let resultado="";
@@ -23,5 +31,24 @@
         }
         return resultado;
     }
+
+    //cuadrado relleno
+    function dibujarCuadrado(tamano){
+
+        let resultado="";
+
+        for(let i=0;i<tamano;i++){
+            //fila de aesteriscos 
+            for(let j=0;j<tamano;i++){
+                resultado +="*";
+            }
+            //agregar un salto de linea despues de completar cada fila
+            resultado="\n";
+        }
+        return resultado;
+
+    }
+    
+    console.log(dibujarCuadrado(5));
 
 
