@@ -90,7 +90,27 @@ function codificacionMorse(palabraMorse){
     }
     console.log('La palabra traducida es: '+ traduccion);
 }
-    
+
+function codificacionPalabra(palabras){
+
+    let caracter="";
+    let traduccion="";
+
+    for(caracteres of caracter){
+
+        
+
+    }
+
+}
+
+
+
+
+
+
+
+
 
 }
 
