@@ -50,10 +50,6 @@ animal2.comer();
 animal2.dormir();
 animal2.hacerRuido();
 
-
-
-
-
 // Clases de ES6
 
 class AnimalES6 {
@@ -68,11 +64,7 @@ class AnimalES6 {
         console.log(`${this.nombre} esta durmiendo`);
     }
     hacerRuido(){
-        if(this.tipo==='perro'){
-            console.log(`${this.nombre} hace guao `);
-        }else if(this.tipo==='gato'){
-            console.log(`${this.nombre} hace miau`);
-        }
+        
     }
 }
 const animal3= new AnimalES6(
@@ -88,10 +80,32 @@ animal3.hacerRuido();
 class Perro extends AnimalES6{
     constructor(nombre){
         super(nombre);
-        this.
+    }
+    //sobre escribe el metodo hacerRuido()
+    hacerRuido(){
+        console.log (`${this.nombre} hace wao`);
+    }
+
+}
+const animalP= new Perro('Laika');
+animalP.comer();
+animalP.dormir();
+animalP.hacerRuido();
+
+// 
+class Gato extends AnimalES6{
+    constructor(nombre){
+        super(nombre);
+    }
+    //sobre escribe el metodo hacerRuido
+    hacerRuido(){
+        console.log (`${this.nombre} hace MIAUU`);
     }
 }
-
+const animalP2= new Gato(`Michuni`);
+animalP2.comer();
+animalP2.dormir();
+animalP2.hacerRuido();
 
 
 
