@@ -1,5 +1,3 @@
-
-
 class Linea {
     constructor(concepto, cantidad, precioUnitario) {
         this.concepto = concepto;
@@ -17,7 +15,7 @@ class Factura {
     hora;
     pagada;
     lineas;
-    constructor(clienteNIF, fecha, hora, pagada, lineas) {
+    constructor(clienteNIF, fecha, hora, pagada,lineas) {
         this.clienteNIF = clienteNIF;
         this.fecha = fecha;
         this.hora = hora;
@@ -28,18 +26,13 @@ class Factura {
     //getter
     get importeTotal() {
         return this.lineas.reduce((total, linea) => total + linea.total, 0);
-
     }
-
     get numeroArticulos() {
         return this.lineas.length;
     }
-
-
     //metodos 
     imprimirFactura() {
         let numLinea=0;
-
         let cadenaString="";
             cadenaString+= ('ClienteNIF:  ' + this.clienteNIF + "<br>"),
             cadenaString+= ('Fecha:  ' + this.fecha + "<br>"),
@@ -59,7 +52,7 @@ class Factura {
         this.lineas.push(new Linea(concepto, cantidad, precio));
     }
     eliminarLinea() {
-         this.lineas.pop;
+         this.lineas.pop();
     }
 }
 // Clase de utilidades
@@ -68,26 +61,21 @@ class Utilidades {
     static serializarFactura(facturaOBJ) {
         return JSON.stringify(facturaOBJ, null, 2);
     }
-
     static deserializarFactura(facturaJSON) {
         let data = JSON.parse(facturaJSON);
         let factura = new Factura(data.clienteNIF, data.fecha, data.hora, data.pagada);
-        factura.lineas=data.lineas.map(linea =>  new Linea(linea.concepto, linea.cantidad, linea.precioUnitario));
-    
+        factura.lineas=data.lineas.map(linea =>  new Linea(linea.concepto, linea.cantidad, linea.precioUnitario));    
         return factura;
     }
-
 }
+
 let factura = new Factura("", "", "", false);
-
-
 function actualizarDatosFactura() {
     factura.clienteNIF = document.getElementById("clienteNIF").value;
     factura.fecha = document.getElementById("fecha").value;
     factura.hora = document.getElementById("hora").value;
      // Verificamos cuál radio está seleccionado y asignamos el valor correspondiente
     factura.pagada = document.getElementById("pagadaSi").checked;
- 
     actualizarFactura();
 }
 
@@ -100,6 +88,7 @@ function agregarLinea() {
 }
 
 function eliminarLinea() {
+    event.preventDefault;
     factura.eliminarLinea();
     actualizarFactura();
 }
