@@ -1,4 +1,3 @@
-
 /*
 Primera parte
 Crea una función constructora “Animal” que reciba como parámetros el tipo y el nombre.
@@ -12,29 +11,25 @@ Codifícalo de la manera más correcta posible.
 Segunda parte
 Vuelve a codificar la clase Animal empleando herencia con el formato ES6.
 */
+function Animal(tipo, nombre) {
+    this.tipo = tipo;
+    this.nombre = nombre;
 
-
-function Animal(tipo,nombre){
-
-    this.tipo=tipo;
-    this.nombre=nombre;
-
-    this.comer=function(){
+    this.comer = function () {
         console.log(`${this.nombre} esta comiendo`);
     }
-    this.dormir=function(){
+    this.dormir = function () {
         console.log(`${this.nombre} esta durmiendo`);
     }
-    this.hacerRuido=function(){
-        if(this.tipo==='perro'){
+    this.hacerRuido = function () {
+        if (this.tipo === 'perro') {
             console.log(`${this.nombre} hace guao `);
-        }else if(this.tipo==='gato'){
+        } else if (this.tipo === 'gato') {
             console.log(`${this.nombre} hace miau`);
         }
-        
     }
 }
-const animal1= new Animal(
+const animal1 = new Animal(
     'perro',
     'Lucas'
 );
@@ -42,7 +37,7 @@ animal1.comer();
 animal1.dormir();
 animal1.hacerRuido();
 
-const animal2= new Animal(
+const animal2 = new Animal(
     'gato',
     'Misha'
 );
@@ -53,59 +48,63 @@ animal2.hacerRuido();
 // Clases de ES6
 
 class AnimalES6 {
-    constructor(nombre,tipo){
-        this.tipo=tipo;
-        this.nombre=nombre;
+    constructor(nombre, tipo) {
+        this.tipo = tipo;
+        this.nombre = nombre;
     }
-    comer(){
+    comer() {
         console.log(`${this.nombre} esta comiendo`);
     }
-    dormir(){
+    dormir() {
         console.log(`${this.nombre} esta durmiendo`);
     }
-    hacerRuido(){
-        
+    hacerRuido() {
     }
 }
-const animal3= new AnimalES6(
+const animal3 = new AnimalES6(
     'Mishifu',
     'gato'
-    
 );
+
 animal3.comer();
 animal3.dormir();
 animal3.hacerRuido();
 
 //Herencia
-class Perro extends AnimalES6{
-    constructor(nombre){
+class Perro extends AnimalES6 {
+    constructor(nombre) {
         super(nombre);
     }
     //sobre escribe el metodo hacerRuido()
-    hacerRuido(){
-        console.log (`${this.nombre} hace wao`);
+    hacerRuido() {
+        console.log(`${this.nombre} hace wao`);
     }
 
 }
-const animalP= new Perro('Laika');
+
+const animalP = new Perro('Laika');
 animalP.comer();
 animalP.dormir();
 animalP.hacerRuido();
 
 // 
-class Gato extends AnimalES6{
-    constructor(nombre){
+class Gato extends AnimalES6 {
+    constructor(nombre) {
         super(nombre);
     }
     //sobre escribe el metodo hacerRuido
-    hacerRuido(){
-        console.log (`${this.nombre} hace MIAUU`);
+    hacerRuido() {
+        console.log(`${this.nombre} hace MIAUU`);
     }
 }
-const animalP2= new Gato(`Michuni`);
+const animalP2 = new Gato(`Michuni`);
 animalP2.comer();
 animalP2.dormir();
 animalP2.hacerRuido();
+
+
+
+
 
 
 

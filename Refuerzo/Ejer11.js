@@ -5,15 +5,15 @@ números que falten entre los valores máximo y mínimo que falten en el array d
 */
 
 
-function numerosPerdidos(arr) {
+function numerosPerdidos(array) {
     // Encontrar el valor mínimo y máximo del array
-    const min = Math.min(...arr);
-    const max = Math.max(...arr);
+    const min = Math.min(...array);
+    const max = Math.max(...array);
     const faltantes = [];
 
     // Recorrer todos los números entre min y max
     for (let i = min; i <= max; i++) {
-        if (!arr.includes(i)) {
+        if (!array.includes(i)) {
             faltantes.push(i); // Agregar los números que faltan al array de faltantes
         }
     }

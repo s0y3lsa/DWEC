@@ -24,7 +24,6 @@ const persona = {
 persona.saludar();
 
 //Definición mediante función constructora
-
 function Persona(nombre,nacimiento,hobbies){
 
     this.nombre=nombre;
@@ -58,5 +57,14 @@ const persona2 = new PersonaES6(
     ['leer','escribir','ver anime']
 );
 persona2.saludar();
+
+
+
+
+
+
+
+
+
 
 
