@@ -4,10 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="clases.js"></script>
+    <script src="clases.js">
+
+        window.addEventListener('load',function(){
+            const resultado=document.getElementById('resultado');
+            console.log(resultado.dataset['entided'] + ' - ' + resultado.dataset.id + 
+                + ' - ' + resultado.dataset['accion']);
+            
+        })
+
+    </script>
 </head>
 <body>
-    
+    <div id="resultado" data-entidad="libro" data-accion="ver" data-id="23">
+
+    </div>
 
     
 </body>

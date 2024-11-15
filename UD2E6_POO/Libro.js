@@ -1,15 +1,5 @@
 
-
-
 class Libro {
-
-    libroID;
-    titulo;
-    autorld;
-    blibliotecaId;
-    prestamos;
-
-
     constructor(libroID, titulo, ISBN, autorld, blibliotecaId, prestamos) {
 
         this.libroID = libroID;
@@ -34,22 +24,15 @@ class Libro {
         <form>
             <label>Titulo: </label>
             <input type="text" id="titulo" name="titulo"></input>
-
             <br></br>
-
             <label>ISBN: </label>
             <input type="text" id="titulo" name="titulo"></input>
-
             <br></br>
-        
             <label>Autor: </label>
             <input type="text" id="autor" name="autor"></input>
-
             <br></br>
-      
             <label>BibliotecaID: </label>
             <input type="text" id="autor" name="autor"></input>
-        
             <br></br>
 
         </form>
@@ -65,36 +48,45 @@ class Libro {
                     <p>Autor ID: ${this.autorId}</p>
                     <p>Biblioteca ID: ${this.bibliotecaId}</p>
                     <p>Disponible: ${this.estaDisponible ? "Sí" : "No"}</p>
-                    <button onclick="editarLibro(${this.libroId})">Editar</button>
-                    <button onclick="borrarLibro(${this.libroId})">Borrar</button>
-                    <button onclick="listarPrestamos(${this.libroId})">Listar Préstamos</button>
-                    <button onclick="crearPrestamo(${this.libroId})">Solicitar Préstamo</button>
-                    <button onclick="devolverPrestamo(${this.libroId})">Devolver Préstamo</button>
+                    <button id="editarLibro(${this.libroId})">Editar</button>
+                    <button id="borrarLibro(${this.libroId})">Borrar</button>
+                    <button id="listarPrestamos(${this.libroId})">Listar Préstamos</button>
+                    <button id="crearPrestamo(${this.libroId})">Solicitar Préstamo</button>
+                    <button id="devolverPrestamo(${this.libroId})">Devolver Préstamo</button>
                 </div>
         `;
 
     }
 
  // Método para generar el formulario de edición de un libro
-
  generarHTMLEdicion(){
      return `
-        <form id="formEditarLibro-${this.libroId}">
+        <h3>Editar Libro</h3>
+            <form id="formulario-edicion-libro">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" value="${this.titulo}" required />
 
-            <input type="text" id="titulo-${this.libroId}" value="${this.titulo}"></input>
-            <input type="text" id="ISBN" value="${this.ISBN}"></input>
-        </form>
+                <label for="ISBN">ISBN:</label>
+                <input type="text" id="ISBN" value="${this.ISBN}" required />
+
+                <button type="button" id="guardarEdicion()">Guardar</button>
+                <button type="button" id="libro.generarHTMLPropiedades()">Cancelar</button>
+            </form>
     `;
  }
 // Listado de préstamos
- generarHTMLListadoPrestamos(){
+generarHTMLListadoPrestamos() {
+    let prestamosStr;
+    let numPrestamo;
 
-    for(let prestamos of prestamo){
-        
-
-
+    for (let prestamo of this.prestamos) {
+        numPrestamo++;
+        prestamosStr += numPrestamo + ". Fecha de prestamo: " + prestamo['fechaPrestamo'] + "Fecha de Devolucion: " + prestamo['fechaDevolucion'];
     }
- }
+}
+
+
+
 
 
 
