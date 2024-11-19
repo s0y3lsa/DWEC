@@ -1,9 +1,6 @@
 
 class Biblioteca{
 
-
-
-
 constructor(bibliotecaId,nombre,ubicacion,libros){
 
     this.bibliotecaId=bibliotecaId;

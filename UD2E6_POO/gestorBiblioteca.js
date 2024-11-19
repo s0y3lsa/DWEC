@@ -7,7 +7,6 @@ import{datosInciales} from './datos.js';
 
 const biblio= (function(){
 
-
      // ID autoincrementales
      let libroId = 1;
      let autorId = 1;
@@ -22,7 +21,7 @@ const biblio= (function(){
     }
     
     let libros=[];
-    for(let libro of objJSON.Libros){
+    for(let libro of objJSON.libros){
         let libroN= new Libro(libro.libroId,libro.titulo,libro.ISBN,libro.autorId,libro.bibliotecaId,libro.prestamos);
         
         let prestamoN = new Prestamo(prestamo.fechaPrestamo,prestamo.fechaDevolucion);
@@ -54,7 +53,6 @@ const biblio= (function(){
     },
 
    generarHTMListadoBibliotecas(){
-        
         return bibliotecas.map(Biblioteca =>`
             <div>
                 <h3>${Biblioteca.nombre}</h3>
