@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+span{
+    background-color: rgb(233, 146, 146);
+    
+}
+form{
+    padding: 20px;
+}
+
+form {
+    font-size: 18px; /* Aumenta el tamaño de la letra del formulario */
+  }

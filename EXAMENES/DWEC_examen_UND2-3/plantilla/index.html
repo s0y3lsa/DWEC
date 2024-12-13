@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="#">
+    <script type="module" src="scripts.js"></script>
+    <link rel="stylesheet" href="estilos.css">
+    <title>EXA2 - Gestión de tareas</title>
+</head>
+
+<body>
+    <main>
+        <!-- Barra superior -->
+        <div class="barra">
+            <input placeholder="Filtro..." />
+            <button id="botonCrearTarea">Nueva</button>
+        </div>
+
+        <!-- Contenido -->
+        <div class="contenido">
+            <!-- Tabla -->
+            <div class="columna">
+                <h3>Lista de tareas</h3>
+                <div class="tabla">
+                    <div class="tabla-cabecera">
+                        <div>Título</div>
+                        <div>Prioridad</div>
+                        <div>Límite</div>
+                        <div></div>
+                    </div>
+                    <div class="tabla-cuerpo">
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario -->
+            <div class="columna">
+                <h3>Crear/Editar tarea</h3>
+                <form name="frmTarea">
+					<!-- Identificador -->
+                    <input  />
+
+                    <label for="titulo">Título</label>
+                    <input type="text" required minlength="5"/>
+                    <span id="errorTitulo" ></span>
+                    <span></span>
+
+                    <label for="prioridad">Prioridad</label>
+                    <select >
+                        
+                    </select>
+                    <span></span>
+
+                    <label for="fechaRegistro">Fecha de Registro</label>
+                    <input type="date" id="fechaRegistro" required/>
+                    <span></span>
+
+                    <label for="fechaLimite">Fecha Límite</label>
+                    <input type="date" id="fechaLimite" required />
+                    <span></span>
+
+                    <label for="descripcion">Descripción</label>
+                    <textarea></textarea>
+
+                    <label for="responsable">Responsable</label>
+                    <!-- No pilla acentos -->
+                    <input required minlength="5"/>
+                    <span></span>
+
+                    <label for="completada">Completada <input></label>
+
+                    <div class="acciones">
+                        <button type="button" id="botonGuardar">Guardar</button>
+                        
+                        <button type="reset">Cancelar</button>
+                      
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
