@@ -20,27 +20,28 @@
             <br>
         <div>
             <label for="email">Correo electrónico</label>
-            <input type="text" id="email" name="email" required>
+            <input type="text" id="email" name="email" required  pattern="[a-zA-Z0-9]+">
             <span id="errorEmail"></span>
         </div>
         <br>
         <div>
             <label for="contraseña">Contraseña</label>
             <!-- -->
-            <input type="password" id="contraseña" name="contraseña" required minlength="8" pattern="[a-B,0-9]">
+            <input type="password" id="contraseña" name="contraseña" required minlength="8" pattern="[a-zA-Z0-8]+">
             <span id="errorContraseña" ></span>
         </div>
         <br>
         <div>
             <label for="confirmarContra">Confirmar contraseña</label>
             <!--debe tener 8 digitos la contraseña-->
-            <input type="password" id="confirmarContra" name="confirmarContra" required>
+            <input type="password" id="confirmarContra" name="confirmarContra" required minlength="8" pattern="[a-zA-Z0-8]+">
         </div>
         <br>
         <div>
             <label for="fechaNacimiento">Fecha de nacimiento</label>
             <!--debe tener al menos 16 años-->
             <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+            <span id="errorFecha"></span>
         </div>
         <br>
         <div>
@@ -60,7 +61,9 @@
         </div>
         <br>
         <div>
-            <label for="terminos">Acepto los términos y condiciones</label>
+            <label for="terminos">Acepto los términos y condiciones</labe>
+                <!--tiene que ser marcado antes de enviarse el formulario-->
+            <input type="checkbox" id="terminos" name="terminos" required>
         </div>
         
         <button id="botonRegistrar">Registrarse</button>
@@ -68,7 +71,6 @@
     <div id="resultado"></div>
 
     <script>
-
         //validar email
         const email = document.getElementById('email');
         const errorEmail = document.getElementById('errorEmail'); // Elemento para mostrar el mensaje de error
@@ -79,17 +81,16 @@
             if(caracteres.test(valor)){
                errorEmail.textContent='';// Limpia el mensaje de error
                errorEmail.style.display='none';// Oculta el mensaje
-            }else{
-               
+            }else
                 errorEmail.setCustomValidity('email incorrecto debe tener un formato valido'); 
             }
-        });
+        );
         
         //validar fecha 
         const fechaNacimiento = document.getElementById('fechaNacimiento');
         fechaNacimiento.addEventListener('input', () => {
             fechaNacimiento.setCustomValidity('');
-            const valor = new Date(campoFecha.value);
+            const valorFecha = new Date(fechaNacimiento.value);
             const hoy = new Date();
             if (isNaN(valorFecha.getTime())) {
                 return;
@@ -102,49 +103,40 @@
             } else if (edad > 99) {
                 fechaNacimiento.setCustomValidity('La edad debe ser menor o igual a 99');
             }
-            console.log(fechaNacimiento.validity);
+            fechaNacimiento.validity;
         });
-
-         
-        /*Validar contraseña*/
-        const contraseña = document.getElementById('contraseña');/*obtener el valor por id*/
-        const errorContraseña=document.getElementById('errorContraseña');
-        contraseña.addEventListener('input', () => {
-        });
+        
 
         //confirmar contraseña
+        const contraseña = document.getElementById('contraseña');
+        
         const confirmarContra=document.getElementById('confirmarContra');
-        confirmarContra.addEventListener('input', () => {
+        const errorContraseña = document.getElementById('errorContraseña');
 
+        confirmarContra.addEventListener('input', () => {
             if(contraseña.value===confirmarContra.value){
-                confirmarContra.setCustomValidity(''); //si coinciden no sale error
+                errorContraseña.setCustomValidity(''); //si coinciden no sale error
             }else{
-                confirmarContra.setCustomValidity('La contraseña no coincide'); //error
+                errorContraseña.innerHTML='La contraseña no coincide';
             }
         });
+        //
 
-        
         /*bobton para registrar*/
         const formulario = document.forms['formulario']
         botonRegistrar.addEventListener('click', function(){
 
             let Registrar={};
-
             Registrar=formulario.elements['nombre'].value;
             Registrar=formulario.elements['email'].value;
             Registrar=formulario.elements['contraseña'].value;
             Registrar=formulario.elements['confirmarContra'].value;
             Registrar=formulario.elements['fechaNacimiento'].value;
             Registrar=formulario.elements['telefono'].value;
-
-            
+            Registrar=formulario.elements['terminos'].checked;
+   
         });
-
-       
-
-
     </script>
-
 
 </body>
 
