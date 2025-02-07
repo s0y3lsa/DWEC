@@ -1,6 +1,5 @@
 /*Crear pagina de inicio */ 
 function Home(){
-
     return (
         <>
         <div>
